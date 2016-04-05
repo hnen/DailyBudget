@@ -21,12 +21,10 @@ class AddNewExpenseTextFieldDelegate : NSObject, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
-        sumLabel.text = textField.text;
         return true;
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        sumLabel.text = textField.text;
     }
     
 

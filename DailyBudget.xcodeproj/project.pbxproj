@@ -15,6 +15,13 @@
 		9D637F191C94095A00E8CBC4 /* DailyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F181C94095A00E8CBC4 /* DailyBudgetTests.swift */; };
 		9D637F241C94095A00E8CBC4 /* DailyBudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F231C94095A00E8CBC4 /* DailyBudgetUITests.swift */; };
 		9D637F321C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */; };
+		C31BFE041CA9A17E00FECC49 /* CurrentBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BFE031CA9A17E00FECC49 /* CurrentBalanceView.swift */; };
+		C31C4D311C9BE24800720E21 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C4D301C9BE24800720E21 /* Account.swift */; };
+		C31C4D331C9BE2AA00720E21 /* Economy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C4D321C9BE2AA00720E21 /* Economy.swift */; };
+		C31C4D351C9BE7AC00720E21 /* EconomyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C4D341C9BE7AC00720E21 /* EconomyController.swift */; };
+		C335C7891CA0521B00E01076 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C335C7881CA0521B00E01076 /* Currency.swift */; };
+		C37585E91CAD9603002CB2CF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37585E81CAD9603002CB2CF /* Settings.swift */; };
+		C37585EB1CADAEAF002CB2CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37585EA1CADAEAF002CB2CF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		9D637F231C94095A00E8CBC4 /* DailyBudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBudgetUITests.swift; sourceTree = "<group>"; };
 		9D637F251C94095A00E8CBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExpenseTextFieldDelegate.swift; sourceTree = "<group>"; };
+		C31BFE031CA9A17E00FECC49 /* CurrentBalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentBalanceView.swift; sourceTree = "<group>"; };
+		C31C4D301C9BE24800720E21 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		C31C4D321C9BE2AA00720E21 /* Economy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Economy.swift; sourceTree = "<group>"; };
+		C31C4D341C9BE7AC00720E21 /* EconomyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomyController.swift; sourceTree = "<group>"; };
+		C335C7881CA0521B00E01076 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C37585E81CAD9603002CB2CF /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C37585EA1CADAEAF002CB2CF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +113,16 @@
 		9D637F021C94095A00E8CBC4 /* DailyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				C37585E71CAD93AC002CB2CF /* Economy */,
+				C37585E61CAD93A1002CB2CF /* Views */,
 				9D637F031C94095A00E8CBC4 /* AppDelegate.swift */,
-				9D637F051C94095A00E8CBC4 /* ViewController.swift */,
 				9D637F071C94095A00E8CBC4 /* Main.storyboard */,
 				9D637F0A1C94095A00E8CBC4 /* Assets.xcassets */,
 				9D637F0C1C94095A00E8CBC4 /* LaunchScreen.storyboard */,
 				9D637F0F1C94095A00E8CBC4 /* Info.plist */,
 				9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */,
+				C31C4D301C9BE24800720E21 /* Account.swift */,
+				C37585E81CAD9603002CB2CF /* Settings.swift */,
 			);
 			path = DailyBudget;
 			sourceTree = "<group>";
@@ -126,6 +143,26 @@
 				9D637F251C94095A00E8CBC4 /* Info.plist */,
 			);
 			path = DailyBudgetUITests;
+			sourceTree = "<group>";
+		};
+		C37585E61CAD93A1002CB2CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D637F051C94095A00E8CBC4 /* ViewController.swift */,
+				C31BFE031CA9A17E00FECC49 /* CurrentBalanceView.swift */,
+				C37585EA1CADAEAF002CB2CF /* SettingsViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C37585E71CAD93AC002CB2CF /* Economy */ = {
+			isa = PBXGroup;
+			children = (
+				C31C4D321C9BE2AA00720E21 /* Economy.swift */,
+				C31C4D341C9BE7AC00720E21 /* EconomyController.swift */,
+				C335C7881CA0521B00E01076 /* Currency.swift */,
+			);
+			name = Economy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +233,7 @@
 				TargetAttributes = {
 					9D637EFF1C94095A00E8CBC4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = NM3HG7GGD2;
+						DevelopmentTeam = R8RJ9996T9;
 					};
 					9D637F131C94095A00E8CBC4 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -260,9 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31C4D331C9BE2AA00720E21 /* Economy.swift in Sources */,
 				9D637F321C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift in Sources */,
+				C31C4D311C9BE24800720E21 /* Account.swift in Sources */,
+				C37585EB1CADAEAF002CB2CF /* SettingsViewController.swift in Sources */,
 				9D637F061C94095A00E8CBC4 /* ViewController.swift in Sources */,
+				C31C4D351C9BE7AC00720E21 /* EconomyController.swift in Sources */,
+				C335C7891CA0521B00E01076 /* Currency.swift in Sources */,
+				C37585E91CAD9603002CB2CF /* Settings.swift in Sources */,
 				9D637F041C94095A00E8CBC4 /* AppDelegate.swift in Sources */,
+				C31BFE041CA9A17E00FECC49 /* CurrentBalanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +450,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -420,7 +464,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -493,6 +537,7 @@
 				9D637F2A1C94095A00E8CBC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D637F2B1C94095A00E8CBC4 /* Build configuration list for PBXNativeTarget "DailyBudgetTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +546,7 @@
 				9D637F2D1C94095A00E8CBC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D637F2E1C94095A00E8CBC4 /* Build configuration list for PBXNativeTarget "DailyBudgetUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +555,7 @@
 				9D637F301C94095A00E8CBC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

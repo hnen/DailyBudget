@@ -61,6 +61,7 @@ class SettingsViewController : UIViewController, UIPickerViewDelegate, UIPickerV
         return Currencies.currencies.count
     }
 
+    // MARK: Navigation
 
     
 }

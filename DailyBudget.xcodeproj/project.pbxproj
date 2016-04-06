@@ -233,7 +233,7 @@
 				TargetAttributes = {
 					9D637EFF1C94095A00E8CBC4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = R8RJ9996T9;
+						DevelopmentTeam = NM3HG7GGD2;
 					};
 					9D637F131C94095A00E8CBC4 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -450,7 +450,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -464,7 +464,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhatinen.DailyBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

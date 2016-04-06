@@ -11,7 +11,9 @@ import UIKit
 class SettingsViewController : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var activeCurrencyPicker: UIPickerView!
+    @IBOutlet weak var setVelocityTextField: UITextField!
     
+    var economyController : EconomyController?
     var settings : SettingsController?    
     
     override func viewDidLoad() {
@@ -63,5 +65,13 @@ class SettingsViewController : UIViewController, UIPickerViewDelegate, UIPickerV
 
     // MARK: Navigation
 
+    @IBAction func setCurrentVelocityPressed(sender: AnyObject) {
+        if let newVelocityInt = Double(setVelocityTextField.text!) {
+            let currency = Currencies.getCurrency(self.settings!.getActiveCurrency())!;
+            self.economyController!.setCurrentVelocity(Velocity(dsum: MoneySum(sum: newVelocityInt, currency: currency.code, rate: currency.rate), dt: 60*60*24)!)
+            self.economyController!.saveEconomy()
+        }
+        
+    }
     
 }

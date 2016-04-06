@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var newExpenseLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var newExpenseButton: UIButton!
-    @IBOutlet weak var setVelocityTextField: UITextField!
     
     var delegate : UITextFieldDelegate?;
     
@@ -41,7 +40,6 @@ class ViewController: UIViewController {
         
 
         self.settings = SettingsController.get()
-        
         self.updateBalanceTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateBalanceText", userInfo: nil, repeats: true)
         
         updateBalanceText()
@@ -53,10 +51,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     // MARK: Actions
-    
     @IBAction func addNewExpense(sender: AnyObject) {
         if let sumInt = Double(newExpenseTextField.text!) {
             self.economyController!.addToBalance(-sumInt, currency: self.settings!.getActiveCurrency())
@@ -64,17 +59,8 @@ class ViewController: UIViewController {
             economyController!.saveEconomy()
         }
     }
-    @IBAction func setCurrentVelocityPressed(sender: AnyObject) {
-        if let newVelocityInt = Double(setVelocityTextField.text!) {
-            let currency = Currencies.getCurrency(self.settings!.getActiveCurrency())!;
-            self.economyController!.setCurrentVelocity(Velocity(dsum: MoneySum(sum: newVelocityInt, currency: currency.code, rate: currency.rate), dt: 60*60*24)!)
-            updateBalanceText()
-            economyController!.saveEconomy()
-        }
-    }
     
     // MARK: Methods
-    
     func updateBalanceText() {
         let currencyName = self.settings?.getActiveCurrency()
         let balance = self.economyController!.evaluateBalance(currencyName!)
@@ -84,14 +70,17 @@ class ViewController: UIViewController {
         let text = NSString(format: currency.sumFormat, balanceRounded);
         balanceLabel.text = String(text);
     }
-    
+ 
+    // MARK: Navigation
     
     @IBAction func unwindToMainView(sender: UIStoryboardSegue) {
     }
-
     
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if let settingsVC = segue.destinationViewController as? SettingsViewController {
+            settingsVC.economyController = self.economyController
+        }
+    }
 
 }
 

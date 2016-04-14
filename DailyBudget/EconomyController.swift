@@ -38,6 +38,19 @@ class EconomyController {
         let moneySum = MoneySum(sum: sum, currency: currency, rate: Currencies.getRate(currency));
         self.economy.timeline.events.append(AddEconomyBalanceEvent(date: date, balanceDelta: moneySum))
     }
+
+    func addFund(name : String) {
+        addFund(name, date: getTime())
+    }
+    
+    func addFund(name : String, date: Double) {
+        self.economy.timeline.events.append(AddFundEvent(date: date, newFundName: name))
+    }
+    
+    func spendFromFund(fundName : String, sum : Double, currency : String) {
+        let moneySum = MoneySum(sum: sum, currency: currency, rate: Currencies.getRate(currency));
+        self.economy.timeline.events.append(SpendEvent(date: getTime(), moneyAmount: moneySum, fundName: fundName))
+    }
     
     func setCurrentVelocity(vel : Velocity) {
         setCurrentVelocity(vel, date: getTime())
@@ -47,11 +60,11 @@ class EconomyController {
         self.economy.timeline.events.append(SetEconomyBalanceVelocityEvent(date: date, deltaAmount: vel.dsum, deltaTime: vel.dt))
     }
     
-    func evaluateBalance(currency : String) -> MoneySum {
+    func evaluateBalance(currency : String) -> EconomyBalance {
         return evaluateBalance(currency, date: getTime())
     }
     
-    func evaluateBalance(currency : String, date : Double) -> MoneySum {
+    func evaluateBalance(currency : String, date : Double) -> EconomyBalance {
         return evaluateTimelineBalance(self.economy.timeline, tgtDate: date, tgtCurrency: currency)
     }
     
@@ -64,11 +77,12 @@ class EconomyController {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Economy.ArchiveURL.path!) as? Economy
     }
     
-    func evaluateTimelineBalance(timeline : EconomyTimeline, tgtDate : Double, tgtCurrency : String) -> MoneySum {
+    func evaluateTimelineBalance(timeline : EconomyTimeline, tgtDate : Double, tgtCurrency : String) -> EconomyBalance {
         let sortedTimeline = timeline.events.sort(cmp)
         var prevDate : Double = 0.0;
         var prevBalance : Double = 0.0;
         var prevVelocity = Velocity(dsum: MoneySum(sum: 0, currency: "EUR", rate: 1), dt: 1)!;
+        let ret = EconomyBalance(currency: Currencies.getCurrency(tgtCurrency)!)
         for event in sortedTimeline {
             let date = event.date;
             if date > tgtDate {
@@ -84,6 +98,14 @@ class EconomyController {
                     velocity = Velocity(dsum: setVelocityEvent.newVelocityDeltaAmount, dt: setVelocityEvent.newVelocityDeltaTime)!
                 } else if let addBalanceEvent = event as? AddEconomyBalanceEvent {
                     balance += Currencies.exchange(addBalanceEvent.balanceDelta, to: tgtCurrency).sum
+                } else if let addFundEvent = event as? AddFundEvent {
+                    ret.accounts.append(EconomyBalanceAccount(name: addFundEvent.newFundName, currency: Currencies.getCurrency(tgtCurrency)!))
+                } else if let spendFromFundEvent = event as? SpendEvent {
+                    let acc = ret.getAccount(spendFromFundEvent.fundName);
+                    if (acc != nil) {
+                        acc!.balance = acc!.balance.sub(spendFromFundEvent.moneyAmount)
+                    }
+                    balance -= Currencies.exchange(spendFromFundEvent.moneyAmount, to: tgtCurrency).sum
                 } else {
                     assert(false);
                 }
@@ -96,7 +118,11 @@ class EconomyController {
         let currency = Currencies.getCurrency(tgtCurrency)!
         
         let dt = tgtDate - prevDate;
-        return MoneySum(sum: prevBalance + Currencies.exchange(prevVelocity.dsum, to: tgtCurrency).sum * dt / prevVelocity.dt, currency: tgtCurrency, rate: currency.rate)
+        
+        let finalBalance = prevBalance + Currencies.exchange(prevVelocity.dsum, to: tgtCurrency).sum * dt / prevVelocity.dt
+        ret.total = MoneySum(sum: finalBalance, currency: tgtCurrency, rate: Currencies.getCurrency(tgtCurrency)!.rate)
+        
+        return ret
         
     }
     

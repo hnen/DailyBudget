@@ -15,7 +15,19 @@
 		9D637F191C94095A00E8CBC4 /* DailyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F181C94095A00E8CBC4 /* DailyBudgetTests.swift */; };
 		9D637F241C94095A00E8CBC4 /* DailyBudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F231C94095A00E8CBC4 /* DailyBudgetUITests.swift */; };
 		9D637F321C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */; };
-		C31BFE041CA9A17E00FECC49 /* CurrentBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31BFE031CA9A17E00FECC49 /* CurrentBalanceView.swift */; };
+		9DD1D3641CB569FB001A6DE4 /* EconomyBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D3631CB569FB001A6DE4 /* EconomyBalance.swift */; };
+		9DD1D3671CB56A20001A6DE4 /* SetEconomyBalanceVelocityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D3661CB56A20001A6DE4 /* SetEconomyBalanceVelocityEvent.swift */; };
+		9DD1D3691CB56A3C001A6DE4 /* AddEconomyBalanceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D3681CB56A3C001A6DE4 /* AddEconomyBalanceEvent.swift */; };
+		9DD1D36B1CB56A5B001A6DE4 /* SetEconomyBalanceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D36A1CB56A5B001A6DE4 /* SetEconomyBalanceEvent.swift */; };
+		9DD1D36D1CB56A78001A6DE4 /* EconomyTimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D36C1CB56A78001A6DE4 /* EconomyTimelineEvent.swift */; };
+		9DD1D3721CB6DDE4001A6DE4 /* AddFundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D3711CB6DDE4001A6DE4 /* AddFundViewController.swift */; };
+		9DD1D3741CB9023C001A6DE4 /* AddFundEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D3731CB9023C001A6DE4 /* AddFundEvent.swift */; };
+		9DD1D3761CB9111A001A6DE4 /* FundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D3751CB9111A001A6DE4 /* FundTableViewCell.swift */; };
+		9DD1D37C1CB91B8D001A6DE4 /* FundTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1D37B1CB91B8D001A6DE4 /* FundTableViewDelegate.swift */; };
+		9DE05EB61CBAA82A00FBB942 /* SaveToFundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE05EB51CBAA82A00FBB942 /* SaveToFundViewController.swift */; };
+		9DE05EB91CBABA6B00FBB942 /* SpendFromFundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE05EB81CBABA6B00FBB942 /* SpendFromFundViewController.swift */; };
+		9DE05EBB1CBABD1E00FBB942 /* FundTableViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE05EBA1CBABD1E00FBB942 /* FundTableViewButton.swift */; };
+		9DF3C6041CBF9432009F5E1E /* SpendEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3C6031CBF9432009F5E1E /* SpendEvent.swift */; };
 		C31C4D311C9BE24800720E21 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C4D301C9BE24800720E21 /* Account.swift */; };
 		C31C4D331C9BE2AA00720E21 /* Economy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C4D321C9BE2AA00720E21 /* Economy.swift */; };
 		C31C4D351C9BE7AC00720E21 /* EconomyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C4D341C9BE7AC00720E21 /* EconomyController.swift */; };
@@ -56,7 +68,19 @@
 		9D637F231C94095A00E8CBC4 /* DailyBudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBudgetUITests.swift; sourceTree = "<group>"; };
 		9D637F251C94095A00E8CBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExpenseTextFieldDelegate.swift; sourceTree = "<group>"; };
-		C31BFE031CA9A17E00FECC49 /* CurrentBalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentBalanceView.swift; sourceTree = "<group>"; };
+		9DD1D3631CB569FB001A6DE4 /* EconomyBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomyBalance.swift; sourceTree = "<group>"; };
+		9DD1D3661CB56A20001A6DE4 /* SetEconomyBalanceVelocityEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetEconomyBalanceVelocityEvent.swift; sourceTree = "<group>"; };
+		9DD1D3681CB56A3C001A6DE4 /* AddEconomyBalanceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEconomyBalanceEvent.swift; sourceTree = "<group>"; };
+		9DD1D36A1CB56A5B001A6DE4 /* SetEconomyBalanceEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetEconomyBalanceEvent.swift; sourceTree = "<group>"; };
+		9DD1D36C1CB56A78001A6DE4 /* EconomyTimelineEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomyTimelineEvent.swift; sourceTree = "<group>"; };
+		9DD1D3711CB6DDE4001A6DE4 /* AddFundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFundViewController.swift; sourceTree = "<group>"; };
+		9DD1D3731CB9023C001A6DE4 /* AddFundEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFundEvent.swift; sourceTree = "<group>"; };
+		9DD1D3751CB9111A001A6DE4 /* FundTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundTableViewCell.swift; sourceTree = "<group>"; };
+		9DD1D37B1CB91B8D001A6DE4 /* FundTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundTableViewDelegate.swift; sourceTree = "<group>"; };
+		9DE05EB51CBAA82A00FBB942 /* SaveToFundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveToFundViewController.swift; sourceTree = "<group>"; };
+		9DE05EB81CBABA6B00FBB942 /* SpendFromFundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendFromFundViewController.swift; sourceTree = "<group>"; };
+		9DE05EBA1CBABD1E00FBB942 /* FundTableViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FundTableViewButton.swift; sourceTree = "<group>"; };
+		9DF3C6031CBF9432009F5E1E /* SpendEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpendEvent.swift; sourceTree = "<group>"; };
 		C31C4D301C9BE24800720E21 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		C31C4D321C9BE2AA00720E21 /* Economy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Economy.swift; sourceTree = "<group>"; };
 		C31C4D341C9BE7AC00720E21 /* EconomyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomyController.swift; sourceTree = "<group>"; };
@@ -120,7 +144,6 @@
 				9D637F0A1C94095A00E8CBC4 /* Assets.xcassets */,
 				9D637F0C1C94095A00E8CBC4 /* LaunchScreen.storyboard */,
 				9D637F0F1C94095A00E8CBC4 /* Info.plist */,
-				9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */,
 				C31C4D301C9BE24800720E21 /* Account.swift */,
 				C37585E81CAD9603002CB2CF /* Settings.swift */,
 			);
@@ -145,12 +168,47 @@
 			path = DailyBudgetUITests;
 			sourceTree = "<group>";
 		};
-		C37585E61CAD93A1002CB2CF /* Views */ = {
+		9DD1D3651CB56A0C001A6DE4 /* EconomyTimelineEvents */ = {
+			isa = PBXGroup;
+			children = (
+				9DD1D3661CB56A20001A6DE4 /* SetEconomyBalanceVelocityEvent.swift */,
+				9DD1D3681CB56A3C001A6DE4 /* AddEconomyBalanceEvent.swift */,
+				9DD1D36A1CB56A5B001A6DE4 /* SetEconomyBalanceEvent.swift */,
+				9DD1D36C1CB56A78001A6DE4 /* EconomyTimelineEvent.swift */,
+				9DD1D3731CB9023C001A6DE4 /* AddFundEvent.swift */,
+				9DF3C6031CBF9432009F5E1E /* SpendEvent.swift */,
+			);
+			name = EconomyTimelineEvents;
+			sourceTree = "<group>";
+		};
+		9DE05EB41CBAA7E500FBB942 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
 				9D637F051C94095A00E8CBC4 /* ViewController.swift */,
-				C31BFE031CA9A17E00FECC49 /* CurrentBalanceView.swift */,
+				9DD1D37B1CB91B8D001A6DE4 /* FundTableViewDelegate.swift */,
+				9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */,
+				9DD1D3751CB9111A001A6DE4 /* FundTableViewCell.swift */,
+				9DE05EBA1CBABD1E00FBB942 /* FundTableViewButton.swift */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		9DE05EB71CBAA84F00FBB942 /* Save To Fund */ = {
+			isa = PBXGroup;
+			children = (
+				9DE05EB51CBAA82A00FBB942 /* SaveToFundViewController.swift */,
+			);
+			name = "Save To Fund";
+			sourceTree = "<group>";
+		};
+		C37585E61CAD93A1002CB2CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DE05EB71CBAA84F00FBB942 /* Save To Fund */,
+				9DE05EB41CBAA7E500FBB942 /* Main View */,
 				C37585EA1CADAEAF002CB2CF /* SettingsViewController.swift */,
+				9DD1D3711CB6DDE4001A6DE4 /* AddFundViewController.swift */,
+				9DE05EB81CBABA6B00FBB942 /* SpendFromFundViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -158,9 +216,11 @@
 		C37585E71CAD93AC002CB2CF /* Economy */ = {
 			isa = PBXGroup;
 			children = (
+				9DD1D3651CB56A0C001A6DE4 /* EconomyTimelineEvents */,
 				C31C4D321C9BE2AA00720E21 /* Economy.swift */,
 				C31C4D341C9BE7AC00720E21 /* EconomyController.swift */,
 				C335C7881CA0521B00E01076 /* Currency.swift */,
+				9DD1D3631CB569FB001A6DE4 /* EconomyBalance.swift */,
 			);
 			name = Economy;
 			sourceTree = "<group>";
@@ -297,16 +357,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE05EB61CBAA82A00FBB942 /* SaveToFundViewController.swift in Sources */,
 				C31C4D331C9BE2AA00720E21 /* Economy.swift in Sources */,
 				9D637F321C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift in Sources */,
+				9DD1D3761CB9111A001A6DE4 /* FundTableViewCell.swift in Sources */,
+				9DD1D37C1CB91B8D001A6DE4 /* FundTableViewDelegate.swift in Sources */,
 				C31C4D311C9BE24800720E21 /* Account.swift in Sources */,
+				9DE05EB91CBABA6B00FBB942 /* SpendFromFundViewController.swift in Sources */,
 				C37585EB1CADAEAF002CB2CF /* SettingsViewController.swift in Sources */,
+				9DD1D3671CB56A20001A6DE4 /* SetEconomyBalanceVelocityEvent.swift in Sources */,
 				9D637F061C94095A00E8CBC4 /* ViewController.swift in Sources */,
 				C31C4D351C9BE7AC00720E21 /* EconomyController.swift in Sources */,
+				9DF3C6041CBF9432009F5E1E /* SpendEvent.swift in Sources */,
+				9DD1D3741CB9023C001A6DE4 /* AddFundEvent.swift in Sources */,
+				9DD1D3641CB569FB001A6DE4 /* EconomyBalance.swift in Sources */,
 				C335C7891CA0521B00E01076 /* Currency.swift in Sources */,
+				9DD1D36B1CB56A5B001A6DE4 /* SetEconomyBalanceEvent.swift in Sources */,
 				C37585E91CAD9603002CB2CF /* Settings.swift in Sources */,
+				9DD1D3721CB6DDE4001A6DE4 /* AddFundViewController.swift in Sources */,
 				9D637F041C94095A00E8CBC4 /* AppDelegate.swift in Sources */,
-				C31BFE041CA9A17E00FECC49 /* CurrentBalanceView.swift in Sources */,
+				9DE05EBB1CBABD1E00FBB942 /* FundTableViewButton.swift in Sources */,
+				9DD1D3691CB56A3C001A6DE4 /* AddEconomyBalanceEvent.swift in Sources */,
+				9DD1D36D1CB56A78001A6DE4 /* EconomyTimelineEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

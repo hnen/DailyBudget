@@ -18,23 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CashTrack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKQ-Dz-Wzf">
-                                <rect key="frame" x="182" y="289" width="254" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Budget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKQ-Dz-Wzf">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kKQ-Dz-Wzf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="kSm-Ia-mOK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kKQ-Dz-Wzf" secondAttribute="trailing" id="sRO-n8-mlk"/>
+                            <constraint firstItem="kKQ-Dz-Wzf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="JAU-hr-Twt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="kKQ-Dz-Wzf" secondAttribute="bottom" id="buh-Td-4Dh"/>
+                            <constraint firstItem="kKQ-Dz-Wzf" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="dUx-4u-3GF"/>
+                            <constraint firstItem="kKQ-Dz-Wzf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="xM3-sb-Akd"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="115" y="341"/>
         </scene>
     </scenes>
 </document>

@@ -91,6 +91,13 @@ class MoneySum : NSObject, NSCoding {
         self.init(sum: sum, currency: currency, rate: rate)
     }
     
+    func add(money : MoneySum) -> MoneySum {
+        return MoneySum(sum: self.sum + money.sum * money.rate / self.rate, currency: self.currency, rate: self.rate)
+    }
+    func sub(money : MoneySum) -> MoneySum {
+        return MoneySum(sum: self.sum - money.sum * money.rate / self.rate, currency: self.currency, rate: self.rate)
+    }
+    
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeDouble(self.sum, forKey: PropertyKey.sumKey)
         aCoder.encodeObject(self.currency, forKey: PropertyKey.currencyKey)
@@ -103,111 +110,5 @@ class MoneySum : NSObject, NSCoding {
         static let currencyKey = "currency"
     }
     
-    
-}
-
-class EconomyTimelineEvent : NSObject, NSCoding {
-    let date : Double;
-    
-    init(date : Double) {
-        self.date = date;
-    }
-    
-    required convenience init(coder aDecoder : NSCoder) {
-        let date = aDecoder.decodeDoubleForKey(PropertyKey.dateKey)
-        self.init(date: date)
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeDouble(self.date, forKey: PropertyKey.dateKey)
-    }
-    
-    struct PropertyKey {
-        static let dateKey = "date"
-    }
-    
-    
-}
-
-class SetEconomyBalanceEvent : EconomyTimelineEvent {
-    let newBalance : MoneySum;
-    
-    init(date : Double, balance : MoneySum) {
-        self.newBalance = balance;
-        super.init(date: date)
-    }
-    
-    required convenience init(coder aDecoder : NSCoder) {
-        let newBalance = aDecoder.decodeObjectForKey(PropertyKey.newBalanceKey) as! MoneySum
-        let date = aDecoder.decodeDoubleForKey(PropertyKey.dateKey)
-        self.init(date: date, balance: newBalance)
-    }
-    
-    override func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.newBalance, forKey: PropertyKey.newBalanceKey)
-        super.encodeWithCoder(aCoder)
-    }
-    
-    struct PropertyKey {
-        static let newBalanceKey = "newBalance"
-    }
-    
-    
-}
-
-class AddEconomyBalanceEvent : EconomyTimelineEvent {
-    let balanceDelta : MoneySum
-    
-    init(date : Double, balanceDelta : MoneySum) {
-        self.balanceDelta = balanceDelta;
-        super.init(date: date)
-    }
-
-    required convenience init(coder aDecoder : NSCoder) {
-        let balanceDelta = aDecoder.decodeObjectForKey(PropertyKey.balanceDelta) as! MoneySum
-        let date = aDecoder.decodeDoubleForKey(PropertyKey.dateKey)
-        self.init(date: date, balanceDelta: balanceDelta)
-    }
-    
-    override func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.balanceDelta, forKey: PropertyKey.balanceDelta)
-        super.encodeWithCoder(aCoder)
-    }
-    
-    struct PropertyKey {
-        static let balanceDelta = "balanceDelta"
-    }
-    
-    
-}
-
-
-class SetEconomyBalanceVelocityEvent : EconomyTimelineEvent {
-    var newVelocityDeltaAmount : MoneySum;
-    var newVelocityDeltaTime : Double;
-    
-    init(date : Double, deltaAmount : MoneySum, deltaTime : Double) {
-        self.newVelocityDeltaAmount = deltaAmount
-        self.newVelocityDeltaTime = deltaTime
-        super.init(date: date);
-    }
-    
-    required convenience init(coder aDecoder : NSCoder) {
-        let deltaAmount = aDecoder.decodeObjectForKey(PropertyKey.newVelocityDeltaAmount) as! MoneySum
-        let deltaTime = aDecoder.decodeDoubleForKey(PropertyKey.newVelocityDeltaTime)
-        let date = aDecoder.decodeDoubleForKey(PropertyKey.dateKey)
-        self.init(date: date, deltaAmount: deltaAmount, deltaTime: deltaTime)
-    }
-    
-    override func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.newVelocityDeltaAmount, forKey: PropertyKey.newVelocityDeltaAmount)
-        aCoder.encodeDouble(self.newVelocityDeltaTime, forKey: PropertyKey.newVelocityDeltaTime)
-        super.encodeWithCoder(aCoder)
-    }
-    
-    struct PropertyKey {
-        static let newVelocityDeltaAmount = "newVelocityDeltaAmount"
-        static let newVelocityDeltaTime = "newVelocityDeltaTime"
-    }
     
 }

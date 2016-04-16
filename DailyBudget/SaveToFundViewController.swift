@@ -10,10 +10,10 @@ import UIKit
 
 class SaveToFundViewController: UIViewController {
 
-    @IBOutlet weak var oneTimeSavingsView: UIView!
-    @IBOutlet weak var constantSavingsView: UIView!
-    @IBOutlet weak var targetSavingsView: UIView!
     @IBOutlet weak var savingsTypeSelector: UISegmentedControl!
+    @IBOutlet weak var savingsContainerView: UIView!
+    
+    var currentSavingsView : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,24 +40,30 @@ class SaveToFundViewController: UIViewController {
     }
     
     func setSavingsType(type : Int) {
-        if type == 0 {
-            oneTimeSavingsView.hidden = false
-            constantSavingsView.hidden = true
-            targetSavingsView.hidden = true
-        } else if type == 1 {
-            oneTimeSavingsView.hidden = true
-            constantSavingsView.hidden = false
-            targetSavingsView.hidden = true
-        } else if type == 2 {
-            oneTimeSavingsView.hidden = true
-            constantSavingsView.hidden = true
-            targetSavingsView.hidden = false
-        } else {
-            oneTimeSavingsView.hidden = true
-            constantSavingsView.hidden = true
-            targetSavingsView.hidden = true
+        if (currentSavingsView != nil) {
+            currentSavingsView?.view.removeFromSuperview()
+            currentSavingsView?.removeFromParentViewController()
+            currentSavingsView = nil
         }
+        var id : String? = nil;
+        if type == 0 {
+            id = "saveToFundOneTime"
+        } else if type == 1 {
+            id = "saveToFundConstant"
+        } else if type == 2 {
+            id = "saveToFundTargetDate"
+        }
+        currentSavingsView = self.storyboard?.instantiateViewControllerWithIdentifier(id!)
+        
+        currentSavingsView!.view.translatesAutoresizingMaskIntoConstraints = false
+        //currentSavingsView!.view.alpha = 0.5
+        currentSavingsView!.view.userInteractionEnabled = true
+        self.addChildViewController(currentSavingsView!)
+        self.savingsContainerView.addSubview(currentSavingsView!.view)
+        self.savingsContainerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[subView]|", options: [], metrics: nil, views: ["subView": currentSavingsView!.view]))
+self.savingsContainerView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subView]|", options: [], metrics: nil, views: ["subView": currentSavingsView!.view]))
     }
+    
 
     /*
     // MARK: - Navigation

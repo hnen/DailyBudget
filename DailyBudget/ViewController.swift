@@ -85,7 +85,11 @@ class ViewController: UIViewController {
         }
         if let spendVC = sender.sourceViewController as? SpendFromFundViewController {
             if spendVC.amountToSpend != nil {
-                economyController!.spendFromFund(spendVC.dstAccount!, sum: spendVC.amountToSpend!, currency: settings!.getActiveCurrency())
+                if (spendVC.dstAccount != nil) {
+                    economyController!.spendFromFund(spendVC.dstAccount!, sum: spendVC.amountToSpend!, currency: settings!.getActiveCurrency())
+                } else {
+                    economyController!.spendFromFund("", sum: spendVC.amountToSpend!, currency: settings!.getActiveCurrency())
+                }
             }
         }
     }

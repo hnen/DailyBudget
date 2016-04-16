@@ -251,41 +251,23 @@
                                     <action selector="savingsTypeChanged:" destination="EoU-Uf-Sf0" eventType="valueChanged" id="2Hs-my-BrT"/>
                                 </connections>
                             </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vxj-YO-IHu">
-                                <rect key="frame" x="20" y="145" width="560" height="604"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XwN-rA-ZAJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="143"/>
-                                        <connections>
-                                            <segue destination="BDC-Zy-SdE" kind="embed" id="Fsy-8P-VeD"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-FC-1jF">
-                                        <rect key="frame" x="0.0" y="143" width="560" height="380"/>
-                                        <connections>
-                                            <segue destination="00b-FY-nNm" kind="embed" id="GsO-Pl-PVP"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92k-cY-1AQ">
-                                        <rect key="frame" x="0.0" y="523" width="560" height="81"/>
-                                        <connections>
-                                            <segue destination="3DM-H9-3Xr" kind="embed" id="QKJ-eB-jbC"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
-                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAB-6Z-xkS">
+                                <rect key="frame" x="20" y="137" width="560" height="455"/>
+                                <color key="backgroundColor" red="1" green="0.071741149341799759" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ycb-eD-DcD" firstAttribute="leading" secondItem="mIx-6o-Zcn" secondAttribute="leadingMargin" id="3OE-ea-yPt"/>
                             <constraint firstItem="hxL-1h-nDg" firstAttribute="leading" secondItem="mIx-6o-Zcn" secondAttribute="leadingMargin" id="7Or-mh-jPK"/>
-                            <constraint firstItem="Vxj-YO-IHu" firstAttribute="top" secondItem="hxL-1h-nDg" secondAttribute="bottom" constant="8" id="DDi-hg-PfD"/>
-                            <constraint firstItem="Vxj-YO-IHu" firstAttribute="trailing" secondItem="mIx-6o-Zcn" secondAttribute="trailingMargin" id="Ehm-Hy-7QB"/>
                             <constraint firstItem="hxL-1h-nDg" firstAttribute="top" secondItem="Ycb-eD-DcD" secondAttribute="bottom" constant="8" id="JgO-LJ-mC4"/>
                             <constraint firstItem="Ycb-eD-DcD" firstAttribute="top" secondItem="ceI-WK-TBE" secondAttribute="bottom" constant="8" id="NA9-cL-mnu"/>
                             <constraint firstItem="Ycb-eD-DcD" firstAttribute="trailing" secondItem="mIx-6o-Zcn" secondAttribute="trailingMargin" id="aEh-o5-Afg"/>
-                            <constraint firstItem="Vxj-YO-IHu" firstAttribute="leading" secondItem="mIx-6o-Zcn" secondAttribute="leadingMargin" id="aPR-5P-1Ec"/>
+                            <constraint firstItem="dAB-6Z-xkS" firstAttribute="trailing" secondItem="mIx-6o-Zcn" secondAttribute="trailingMargin" id="k06-rT-KIo"/>
+                            <constraint firstItem="dAB-6Z-xkS" firstAttribute="leading" secondItem="mIx-6o-Zcn" secondAttribute="leadingMargin" id="oVQ-J8-YEa"/>
+                            <constraint firstItem="dAB-6Z-xkS" firstAttribute="top" secondItem="hxL-1h-nDg" secondAttribute="bottom" constant="8" id="p2c-Yd-1Ww"/>
                             <constraint firstItem="hxL-1h-nDg" firstAttribute="trailing" secondItem="mIx-6o-Zcn" secondAttribute="trailingMargin" id="plg-Y6-MaW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="dAB-6Z-xkS" secondAttribute="bottom" constant="8" id="zGJ-bx-mIO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Save &quot;Food&quot;" id="ivO-VH-tyE">
@@ -311,16 +293,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="constantSavingsView" destination="XwN-rA-ZAJ" id="lbV-Vl-jPe"/>
-                        <outlet property="oneTimeSavingsView" destination="92k-cY-1AQ" id="O6w-iJ-YZv"/>
+                        <outlet property="savingsContainerView" destination="dAB-6Z-xkS" id="5qW-mz-UBC"/>
                         <outlet property="savingsTypeSelector" destination="hxL-1h-nDg" id="6sq-UR-ttx"/>
-                        <outlet property="targetSavingsView" destination="zcv-FC-1jF" id="0n8-bC-5yx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDO-CL-T7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="o9h-Pf-gy5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1029" y="1285"/>
+            <point key="canvasLocation" x="961" y="1377"/>
         </scene>
         <!--Settings-->
         <scene sceneID="8bi-Qc-SAk">
@@ -529,23 +509,23 @@
         <!--View Controller-->
         <scene sceneID="Y8m-Y4-Ard">
             <objects>
-                <viewController id="3DM-H9-3Xr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveToFundOneTime" id="3DM-H9-3Xr" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UEC-wz-XyY"/>
                         <viewControllerLayoutGuide type="bottom" id="Fa7-QM-1fm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VlT-UD-Jr8">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="81"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One time saving to &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjC-mq-lEj">
-                                <rect key="frame" x="20" y="8" width="520" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="One time saving to &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjC-mq-lEj">
+                                <rect key="frame" x="20" y="8" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTk-6B-Xtl">
-                                <rect key="frame" x="20" y="36" width="520" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTk-6B-Xtl">
+                                <rect key="frame" x="20" y="36" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -563,45 +543,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7O1-T7-jKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="1833"/>
+            <point key="canvasLocation" x="347" y="2197"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="acV-fu-32g">
             <objects>
-                <viewController id="00b-FY-nNm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveToFundTargetDate" id="00b-FY-nNm" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Cl-RY-UPt"/>
                         <viewControllerLayoutGuide type="bottom" id="4cD-dF-4vI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hys-wI-atj">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="380"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save target for &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlB-yq-AyR">
-                                <rect key="frame" x="20" y="8" width="520" height="20.5"/>
+                                <rect key="frame" x="20" y="28" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juj-j1-n3G">
-                                <rect key="frame" x="20" y="61" width="520" height="30"/>
+                                <rect key="frame" x="20" y="81" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er0-TB-oyP">
-                                <rect key="frame" x="20" y="36.5" width="520" height="20.5"/>
+                                <rect key="frame" x="20" y="56" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trK-nc-oMo">
-                                <rect key="frame" x="20" y="99" width="520" height="20.5"/>
+                                <rect key="frame" x="20" y="119" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="DbT-LL-Gr6">
-                                <rect key="frame" x="20" y="123.5" width="520" height="216"/>
+                                <rect key="frame" x="20" y="143" width="560" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="481973233.31480497">
                                     <!--2016-04-10 09:27:13 +0000-->
                                 </date>
@@ -634,54 +614,41 @@
         <!--View Controller-->
         <scene sceneID="DAN-1q-phq">
             <objects>
-                <viewController id="BDC-Zy-SdE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveToFundConstant" id="BDC-Zy-SdE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="73M-88-qr4"/>
                         <viewControllerLayoutGuide type="bottom" id="0v2-lJ-tMr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RoK-J8-lQ5">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="143"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dfh-LU-iMl">
-                                <rect key="frame" x="20" y="37" width="520" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constant saving to &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW3-GA-pGM">
-                                <rect key="frame" x="20" y="8" width="520" height="20.5"/>
+                                <rect key="frame" x="20" y="28" width="560" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-Yh-D1f">
-                                <rect key="frame" x="20" y="75" width="520" height="29"/>
-                                <segments>
-                                    <segment title="Per Day"/>
-                                    <segment title="Per Week"/>
-                                    <segment title="Per 30 Days"/>
-                                </segments>
-                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXf-OW-bHI">
+                                <rect key="frame" x="28" y="48.5" width="544" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dfh-LU-iMl" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="Ggx-Zi-cwf"/>
-                            <constraint firstItem="gFQ-Yh-D1f" firstAttribute="top" secondItem="Dfh-LU-iMl" secondAttribute="bottom" constant="8" id="Hfo-O5-F6L"/>
+                            <constraint firstItem="FXf-OW-bHI" firstAttribute="top" secondItem="GW3-GA-pGM" secondAttribute="bottom" id="7lZ-8O-Mfq"/>
                             <constraint firstItem="GW3-GA-pGM" firstAttribute="trailing" secondItem="RoK-J8-lQ5" secondAttribute="trailingMargin" id="NU4-FQ-BvQ"/>
-                            <constraint firstItem="Dfh-LU-iMl" firstAttribute="trailing" secondItem="RoK-J8-lQ5" secondAttribute="trailingMargin" id="Nmi-uC-wGd"/>
+                            <constraint firstItem="FXf-OW-bHI" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" constant="8" id="OrI-ec-yih"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FXf-OW-bHI" secondAttribute="trailing" constant="8" id="REL-tW-504"/>
                             <constraint firstItem="GW3-GA-pGM" firstAttribute="top" secondItem="73M-88-qr4" secondAttribute="bottom" constant="8" id="am3-Pe-cBz"/>
-                            <constraint firstItem="Dfh-LU-iMl" firstAttribute="top" secondItem="GW3-GA-pGM" secondAttribute="bottom" constant="8" id="dQ7-nC-moZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gFQ-Yh-D1f" secondAttribute="trailing" id="ipK-yA-kZs"/>
-                            <constraint firstItem="gFQ-Yh-D1f" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="ke7-8P-XOo"/>
                             <constraint firstItem="GW3-GA-pGM" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="ke7-y6-gy4"/>
-                            <constraint firstItem="Dfh-LU-iMl" firstAttribute="trailing" secondItem="RoK-J8-lQ5" secondAttribute="trailingMargin" id="kiw-pw-ijE"/>
-                            <constraint firstItem="Dfh-LU-iMl" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="uSh-OW-aVj"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uic-Ev-Bch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365" y="1833"/>
+            <point key="canvasLocation" x="1693" y="2155"/>
         </scene>
     </scenes>
 </document>

@@ -46,6 +46,15 @@ class Currencies {
         return MoneySum(sum: from.sum * from.rate / currTo.rate, currency: to, rate: currTo.rate)
     }
     
+    static func exchange(from : MoneySum, to : String, rate : Double) -> MoneySum {
+        return MoneySum(sum: from.sum * from.rate / rate, currency: to, rate: rate)
+    }
+    
+    static func format(sum : MoneySum) -> String {
+        let curr = Currencies.getCurrency(sum.currency)
+        return String(NSString(format: curr!.sumFormat, sum.sum))
+    }
+    
     static func getRate(currencyCode : String) -> Double {
         return getCurrency(currencyCode)!.rate
         

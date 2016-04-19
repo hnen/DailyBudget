@@ -20,6 +20,13 @@ struct Velocity {
         self.dt = dt
     }
     
+    func add(avel : Velocity) -> Velocity {
+        return Velocity(dsum: self.dsum.add(avel.dsum.mul(self.dt / avel.dt)), dt: self.dt)!
+    }
+    func sub(avel : Velocity) -> Velocity {
+        return Velocity(dsum: self.dsum.sub(avel.dsum.mul(self.dt / avel.dt)), dt: self.dt)!
+    }
+    
 }
 
 class EconomyController {
@@ -50,6 +57,16 @@ class EconomyController {
     func spendFromFund(fundName : String, sum : Double, currency : String) {
         let moneySum = MoneySum(sum: sum, currency: currency, rate: Currencies.getRate(currency));
         self.economy.timeline.events.append(SpendEvent(date: getTime(), moneyAmount: moneySum, fundName: fundName))
+    }
+    
+    func transferToFund(fundName : String, sum : Double, currency : String) {
+        let moneySum = MoneySum(sum: sum, currency: currency, rate: Currencies.getRate(currency));
+        self.economy.timeline.events.append(TransferToFundEvent(date: getTime(), moneyAmount: moneySum, fundName: fundName))
+    }
+    
+    func saveToFund(fundName : String, velocity : Double, dt : Double, currency :  String, targetSum : Double?) {
+        let vel = Velocity(dsum: MoneySum(sum: velocity, currency: currency, rate: Currencies.getRate(currency)), dt: dt)!
+        self.economy.timeline.events.append(SetFundSavingEvent(date: getTime(), velocity: vel, fundName: fundName, targetAmount: targetSum))
     }
     
     func setCurrentVelocity(vel : Velocity) {
@@ -92,6 +109,15 @@ class EconomyController {
                 var velocity = prevVelocity
                 let dt = date - prevDate;
                 balance = prevBalance + Currencies.exchange(velocity.dsum, to: tgtCurrency).sum * dt / velocity.dt
+                for acc in ret.accounts {
+                    acc.balance = acc.balance.add(acc.velocity.dsum.mul(dt / acc.velocity.dt))
+                    if acc.savingTarget != nil {
+                        if acc.balance.isGreaterThanEqualTo(acc.savingTarget!) {
+                            acc.balance = acc.balance.clamp(acc.savingTarget!)
+                            acc.velocity = Velocity(dsum: MoneySum(sum: 0, currency: acc.balance.currency, rate: acc.balance.rate), dt: 1)!
+                        }
+                    }
+                }
                 if let setBalanceEvent = event as? SetEconomyBalanceEvent {
                     balance = Currencies.exchange(setBalanceEvent.newBalance, to: tgtCurrency).sum
                 } else if let setVelocityEvent = event as? SetEconomyBalanceVelocityEvent {
@@ -106,6 +132,19 @@ class EconomyController {
                         acc!.balance = acc!.balance.sub(spendFromFundEvent.moneyAmount)
                     }
                     balance -= Currencies.exchange(spendFromFundEvent.moneyAmount, to: tgtCurrency).sum
+                } else if let transferToFundEvent = event as? TransferToFundEvent {
+                    let acc = ret.getAccount(transferToFundEvent.fundName);
+                    if (acc != nil) {
+                        acc!.balance = acc!.balance.add(transferToFundEvent.moneyAmount)
+                    }
+                } else if let ev = event as? SetFundSavingEvent {
+                    let acc = ret.getAccount(ev.fundName);
+                    if (acc != nil) {
+                        acc!.velocity = Velocity(dsum: ev.velocity_dsum, dt: ev.velocity_dt)!
+                        if (ev.targetAmount != nil) {
+                            acc!.savingTarget = MoneySum(sum: ev.targetAmount!, currency: ev.velocity_dsum.currency, rate: ev.velocity_dsum.rate)
+                        }
+                    }
                 } else {
                     assert(false);
                 }
@@ -115,12 +154,20 @@ class EconomyController {
             }
         }
     
-        let currency = Currencies.getCurrency(tgtCurrency)!
-        
         let dt = tgtDate - prevDate;
         
         let finalBalance = prevBalance + Currencies.exchange(prevVelocity.dsum, to: tgtCurrency).sum * dt / prevVelocity.dt
         ret.total = MoneySum(sum: finalBalance, currency: tgtCurrency, rate: Currencies.getCurrency(tgtCurrency)!.rate)
+        ret.velocity = prevVelocity
+        for acc in ret.accounts {
+            acc.balance = acc.balance.add(acc.velocity.dsum.mul(dt / acc.velocity.dt))
+            if acc.savingTarget != nil {
+                if acc.balance.isGreaterThanEqualTo(acc.savingTarget!) {
+                    acc.balance = acc.balance.clamp(acc.savingTarget!)
+                    acc.velocity = Velocity(dsum: MoneySum(sum: 0, currency: acc.balance.currency, rate: acc.balance.rate), dt: 1)!
+                }
+            }
+        }
         
         return ret
         

@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="132€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="lPo-qN-D6S">
-                                <rect key="frame" x="20" y="35" width="560" height="76.5"/>
+                                <rect key="frame" x="20" y="35" width="560" height="77"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="64"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -67,31 +67,25 @@
                                     <segue destination="JJX-X5-jk4" kind="show" id="zxa-52-lkX"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ums-Vp-G5T">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ums-Vp-G5T">
                                 <rect key="frame" x="20" y="209" width="560" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FundTableViewCell" rowHeight="80" id="gIP-2R-utq" customClass="FundTableViewCell" customModule="DailyBudget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FundTableViewCell" rowHeight="73" id="gIP-2R-utq" customClass="FundTableViewCell" customModule="DailyBudget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gIP-2R-utq" id="Vg2-sg-TkA">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Food" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJT-2d-bVm">
-                                                    <rect key="frame" x="8" y="8" width="304" height="33"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJT-2d-bVm">
+                                                    <rect key="frame" x="8" y="0.0" width="274" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="12.67€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSb-71-aDG">
-                                                    <rect key="frame" x="8" y="49" width="304" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-gI-hFx" customClass="FundTableViewButton" customModule="DailyBudget" customModuleProvider="target">
-                                                    <rect key="frame" x="415" y="8" width="137" height="33"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-gI-hFx" customClass="FundTableViewButton" customModule="DailyBudget" customModuleProvider="target">
+                                                    <rect key="frame" x="482" y="-4" width="70" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <state key="normal" title="Spend"/>
                                                     <connections>
@@ -99,8 +93,20 @@
                                                         <segue destination="nFf-DW-Fak" kind="show" id="AZk-A5-do0"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV4-Dr-8VG" customClass="FundTableViewButton" customModule="DailyBudget" customModuleProvider="target">
-                                                    <rect key="frame" x="506" y="49" width="46" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12.67€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSb-71-aDG">
+                                                    <rect key="frame" x="8" y="30" width="280" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23€ / d" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-ey-lbW">
+                                                    <rect key="frame" x="8" y="51" width="274" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UV4-Dr-8VG" customClass="FundTableViewButton" customModule="DailyBudget" customModuleProvider="target">
+                                                    <rect key="frame" x="518" y="36" width="34" height="30"/>
                                                     <state key="normal" title="Save"/>
                                                     <connections>
                                                         <action selector="savePressed:" destination="gIP-2R-utq" eventType="touchUpInside" id="LvZ-gC-Dhn"/>
@@ -109,10 +115,10 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="NPg-gI-hFx" firstAttribute="trailing" secondItem="Vg2-sg-TkA" secondAttribute="trailingMargin" id="B3f-tL-V8q"/>
-                                                <constraint firstItem="qJT-2d-bVm" firstAttribute="leading" secondItem="Vg2-sg-TkA" secondAttribute="leadingMargin" id="UBa-Ub-8DX"/>
-                                                <constraint firstItem="YSb-71-aDG" firstAttribute="leading" secondItem="Vg2-sg-TkA" secondAttribute="leadingMargin" id="gBS-9y-KCb"/>
-                                                <constraint firstItem="UV4-Dr-8VG" firstAttribute="trailing" secondItem="Vg2-sg-TkA" secondAttribute="trailingMargin" id="gBX-D0-8Gg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UV4-Dr-8VG" secondAttribute="bottom" constant="-1.5" id="37h-wr-sxT"/>
+                                                <constraint firstItem="NPg-gI-hFx" firstAttribute="trailing" secondItem="Vg2-sg-TkA" secondAttribute="trailingMargin" id="LMH-nk-y0d"/>
+                                                <constraint firstItem="UV4-Dr-8VG" firstAttribute="trailing" secondItem="Vg2-sg-TkA" secondAttribute="trailingMargin" id="VCT-Zh-wyM"/>
+                                                <constraint firstItem="NPg-gI-hFx" firstAttribute="top" secondItem="Vg2-sg-TkA" secondAttribute="topMargin" id="ZeR-Ke-wUx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -120,6 +126,7 @@
                                             <outlet property="fundTitleLabel" destination="qJT-2d-bVm" id="Cos-z2-Xbb"/>
                                             <outlet property="saveButton" destination="UV4-Dr-8VG" id="hbu-DO-oBO"/>
                                             <outlet property="spendButton" destination="NPg-gI-hFx" id="Vhr-Oo-0Io"/>
+                                            <outlet property="velocityLabel" destination="Fdy-ey-lbW" id="2Ax-mJ-1WN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -234,12 +241,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save in &quot;Food&quot; in EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycb-eD-DcD">
-                                <rect key="frame" x="20" y="72" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hxL-1h-nDg">
                                 <rect key="frame" x="20" y="101" width="560" height="29"/>
                                 <segments>
@@ -255,6 +256,12 @@
                                 <rect key="frame" x="20" y="137" width="560" height="455"/>
                                 <color key="backgroundColor" red="1" green="0.071741149341799759" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save in &quot;Food&quot; in EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycb-eD-DcD">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -293,6 +300,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="saveButton" destination="D9j-k6-g6T" id="xUr-jO-vVc"/>
                         <outlet property="savingsContainerView" destination="dAB-6Z-xkS" id="5qW-mz-UBC"/>
                         <outlet property="savingsTypeSelector" destination="hxL-1h-nDg" id="6sq-UR-ttx"/>
                     </connections>
@@ -320,22 +328,22 @@
                                     <constraint firstAttribute="height" constant="64" id="KKz-H0-Xkr"/>
                                 </constraints>
                             </pickerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aC2-gB-JwK">
-                                <rect key="frame" x="40" y="104" width="520" height="80.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aC2-gB-JwK">
+                                <rect key="frame" x="40" y="104" width="520" height="81"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Current Velocity per Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-Pp-vTo">
-                                        <rect key="frame" x="0.0" y="0.0" width="217" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set Current Velocity per Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-Pp-vTo">
+                                        <rect key="frame" x="0.0" y="0.0" width="217" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Velocity per day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9g-vn-Pqo">
-                                        <rect key="frame" x="0.0" y="20.5" width="520" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Velocity per day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o9g-vn-Pqo">
+                                        <rect key="frame" x="0.0" y="21" width="520" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-R6-RCL">
-                                        <rect key="frame" x="0.0" y="50.5" width="520" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-R6-RCL">
+                                        <rect key="frame" x="0.0" y="51" width="520" height="30"/>
                                         <state key="normal" title="Set"/>
                                         <connections>
                                             <action selector="setCurrentVelocityPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hz6-OK-2VD"/>
@@ -350,8 +358,8 @@
                                     <constraint firstAttribute="trailing" secondItem="hwy-R6-RCL" secondAttribute="trailing" id="pNh-do-dWY"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZr-d0-RQi">
-                                <rect key="frame" x="20" y="204.5" width="560" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZr-d0-RQi">
+                                <rect key="frame" x="20" y="205" width="560" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <segue destination="8xh-R7-uN1" kind="unwind" unwindAction="unwindToMainView:" id="Odq-yI-0tY"/>
@@ -506,10 +514,10 @@
             </objects>
             <point key="canvasLocation" x="1009" y="549"/>
         </scene>
-        <!--View Controller-->
+        <!--Save To Fund One Time View Controller-->
         <scene sceneID="Y8m-Y4-Ard">
             <objects>
-                <viewController storyboardIdentifier="saveToFundOneTime" id="3DM-H9-3Xr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveToFundOneTime" id="3DM-H9-3Xr" customClass="SaveToFundOneTimeViewController" customModule="DailyBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UEC-wz-XyY"/>
                         <viewControllerLayoutGuide type="bottom" id="Fa7-QM-1fm"/>
@@ -519,7 +527,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="One time saving to &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjC-mq-lEj">
-                                <rect key="frame" x="20" y="8" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="8" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -540,15 +548,18 @@
                             <constraint firstItem="OTk-6B-Xtl" firstAttribute="leading" secondItem="VlT-UD-Jr8" secondAttribute="leadingMargin" id="sLa-nr-T2H"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sumTextField" destination="OTk-6B-Xtl" id="ZJg-RI-ndi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7O1-T7-jKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="347" y="2197"/>
         </scene>
-        <!--View Controller-->
+        <!--Save To Fund Target Date View Controller-->
         <scene sceneID="acV-fu-32g">
             <objects>
-                <viewController storyboardIdentifier="saveToFundTargetDate" id="00b-FY-nNm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveToFundTargetDate" id="00b-FY-nNm" customClass="SaveToFundTargetDateViewController" customModule="DailyBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Cl-RY-UPt"/>
                         <viewControllerLayoutGuide type="bottom" id="4cD-dF-4vI"/>
@@ -558,34 +569,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save target for &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlB-yq-AyR">
-                                <rect key="frame" x="20" y="28" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="28" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juj-j1-n3G">
-                                <rect key="frame" x="20" y="81" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er0-TB-oyP">
-                                <rect key="frame" x="20" y="56" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="57" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trK-nc-oMo">
-                                <rect key="frame" x="20" y="119" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="120" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="DbT-LL-Gr6">
-                                <rect key="frame" x="20" y="143" width="560" height="216"/>
+                                <rect key="frame" x="20" y="145" width="560" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="481973233.31480497">
                                     <!--2016-04-10 09:27:13 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Free velocity: 23.1€ / d Saving velocity: 20€ / d" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeq-f2-n82">
+                                <rect key="frame" x="20" y="369" width="560" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juj-j1-n3G">
+                                <rect key="frame" x="20" y="82" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -595,8 +612,11 @@
                             <constraint firstItem="DlB-yq-AyR" firstAttribute="leading" secondItem="Hys-wI-atj" secondAttribute="leadingMargin" id="5Gr-YJ-15O"/>
                             <constraint firstItem="DbT-LL-Gr6" firstAttribute="trailing" secondItem="Hys-wI-atj" secondAttribute="trailingMargin" id="9tz-4U-F74"/>
                             <constraint firstItem="er0-TB-oyP" firstAttribute="leading" secondItem="Hys-wI-atj" secondAttribute="leadingMargin" id="Bt5-hk-ecd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jeq-f2-n82" secondAttribute="trailing" id="D3i-ct-wSR"/>
                             <constraint firstItem="trK-nc-oMo" firstAttribute="top" secondItem="juj-j1-n3G" secondAttribute="bottom" constant="8" id="E6j-ys-LyI"/>
                             <constraint firstItem="er0-TB-oyP" firstAttribute="top" secondItem="DlB-yq-AyR" secondAttribute="bottom" constant="8" id="QwP-1U-l7l"/>
+                            <constraint firstItem="jeq-f2-n82" firstAttribute="top" secondItem="DbT-LL-Gr6" secondAttribute="bottom" constant="8" id="Tnv-br-JpU"/>
+                            <constraint firstItem="jeq-f2-n82" firstAttribute="leading" secondItem="Hys-wI-atj" secondAttribute="leadingMargin" id="UEj-WF-12m"/>
                             <constraint firstItem="juj-j1-n3G" firstAttribute="leading" secondItem="Hys-wI-atj" secondAttribute="leadingMargin" id="VA5-jB-cH2"/>
                             <constraint firstItem="trK-nc-oMo" firstAttribute="trailing" secondItem="Hys-wI-atj" secondAttribute="trailingMargin" id="VsA-Cq-48h"/>
                             <constraint firstItem="DlB-yq-AyR" firstAttribute="top" secondItem="6Cl-RY-UPt" secondAttribute="bottom" constant="8" id="e97-Gt-QRW"/>
@@ -606,15 +626,20 @@
                             <constraint firstItem="DbT-LL-Gr6" firstAttribute="leading" secondItem="Hys-wI-atj" secondAttribute="leadingMargin" id="v8P-sN-yPS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="statsLabel" destination="jeq-f2-n82" id="9Tr-mg-3LA"/>
+                        <outlet property="targetDatePicker" destination="DbT-LL-Gr6" id="s6Y-Eb-WAy"/>
+                        <outlet property="targetSumTextField" destination="juj-j1-n3G" id="mju-9V-KVk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coC-rP-MNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1029" y="2155"/>
         </scene>
-        <!--View Controller-->
+        <!--Save To Fund Constant View Controller-->
         <scene sceneID="DAN-1q-phq">
             <objects>
-                <viewController storyboardIdentifier="saveToFundConstant" id="BDC-Zy-SdE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="saveToFundConstant" id="BDC-Zy-SdE" customClass="SaveToFundConstantViewController" customModule="DailyBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="73M-88-qr4"/>
                         <viewControllerLayoutGuide type="bottom" id="0v2-lJ-tMr"/>
@@ -624,27 +649,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constant saving to &quot;Food&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW3-GA-pGM">
-                                <rect key="frame" x="20" y="28" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="28" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXf-OW-bHI">
-                                <rect key="frame" x="28" y="48.5" width="544" height="30"/>
+                                <rect key="frame" x="20" y="49" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCy-vx-Ora">
+                                <rect key="frame" x="20" y="87" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKl-kJ-WyE">
+                                <rect key="frame" x="20" y="108" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free velocity: 23.2€ / d Time until target: 23d 5h 30min 21s" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rq-9q-7Dv">
+                                <rect key="frame" x="20" y="146" width="560" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FXf-OW-bHI" firstAttribute="top" secondItem="GW3-GA-pGM" secondAttribute="bottom" id="7lZ-8O-Mfq"/>
+                            <constraint firstItem="ZCy-vx-Ora" firstAttribute="top" secondItem="FXf-OW-bHI" secondAttribute="bottom" constant="8" id="ARs-R9-6C6"/>
+                            <constraint firstItem="FXf-OW-bHI" firstAttribute="top" secondItem="GW3-GA-pGM" secondAttribute="bottom" id="HB4-Cx-H6j"/>
                             <constraint firstItem="GW3-GA-pGM" firstAttribute="trailing" secondItem="RoK-J8-lQ5" secondAttribute="trailingMargin" id="NU4-FQ-BvQ"/>
-                            <constraint firstItem="FXf-OW-bHI" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" constant="8" id="OrI-ec-yih"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FXf-OW-bHI" secondAttribute="trailing" constant="8" id="REL-tW-504"/>
+                            <constraint firstItem="hKl-kJ-WyE" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="RLg-Vv-RNK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FXf-OW-bHI" secondAttribute="trailing" id="SzW-hu-GRQ"/>
+                            <constraint firstItem="FXf-OW-bHI" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="Utb-tI-pKD"/>
+                            <constraint firstItem="ZCy-vx-Ora" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="Xsq-OP-W0B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hKl-kJ-WyE" secondAttribute="trailing" id="YVL-si-VlA"/>
                             <constraint firstItem="GW3-GA-pGM" firstAttribute="top" secondItem="73M-88-qr4" secondAttribute="bottom" constant="8" id="am3-Pe-cBz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2rq-9q-7Dv" secondAttribute="trailing" id="dj9-c2-Qmw"/>
+                            <constraint firstItem="2rq-9q-7Dv" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="gdF-RW-wYG"/>
                             <constraint firstItem="GW3-GA-pGM" firstAttribute="leading" secondItem="RoK-J8-lQ5" secondAttribute="leadingMargin" id="ke7-y6-gy4"/>
+                            <constraint firstItem="hKl-kJ-WyE" firstAttribute="top" secondItem="ZCy-vx-Ora" secondAttribute="bottom" id="khU-Th-qeT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZCy-vx-Ora" secondAttribute="trailing" id="nCZ-F7-nC6"/>
+                            <constraint firstItem="2rq-9q-7Dv" firstAttribute="top" secondItem="hKl-kJ-WyE" secondAttribute="bottom" constant="8" id="onE-C5-hvP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="savingVelocityTextField" destination="FXf-OW-bHI" id="Ow8-6o-2Dw"/>
+                        <outlet property="statsLabel" destination="2rq-9q-7Dv" id="H44-wc-CZL"/>
+                        <outlet property="targetSumTextField" destination="hKl-kJ-WyE" id="kLU-eD-7yg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uic-Ev-Bch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

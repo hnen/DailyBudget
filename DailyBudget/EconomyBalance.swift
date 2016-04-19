@@ -35,12 +35,21 @@ class EconomyBalanceAccount {
     
     let name : String
     var balance : MoneySum
-    var velocity : Double
+    var velocity : Velocity
+    var savingTarget : MoneySum?
     
     init(name : String, currency : Currency) {
         self.name = name
         self.balance = MoneySum(sum: 0.0, currency: currency.code, rate: currency.rate)
-        self.velocity = 0.0
+        self.velocity = Velocity(dsum: MoneySum(sum: 0.0, currency: currency.code, rate: currency.rate), dt: 1)!
+        self.savingTarget = nil
+    }
+
+    init(name : String, currency : Currency, velocity : Velocity) {
+        self.name = name
+        self.balance = MoneySum(sum: 0.0, currency: currency.code, rate: currency.rate)
+        self.velocity = velocity
+        self.savingTarget = nil
     }
     
 }

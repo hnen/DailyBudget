@@ -90,7 +90,21 @@ class ViewController: UIViewController {
                 } else {
                     economyController!.spendFromFund("", sum: spendVC.amountToSpend!, currency: settings!.getActiveCurrency())
                 }
+                economyController!.saveEconomy()
             }
+        }
+        if let saveVC = sender.sourceViewController as? SaveToFundViewController {
+            var dstAccount = ""
+            if (saveVC.dstAccount != nil) {
+                dstAccount = saveVC.dstAccount!
+            }
+            if saveVC.oneTimeSaving != nil {
+                economyController!.transferToFund(dstAccount, sum: saveVC.oneTimeSaving!, currency: settings!.getActiveCurrency())
+            }
+            if saveVC.savingVelocity != nil {
+                economyController!.saveToFund(dstAccount, velocity: saveVC.savingVelocity!, dt: 60*60*24, currency: settings!.getActiveCurrency(), targetSum: saveVC.savingTarget)
+            }
+            economyController!.saveEconomy()
         }
     }
     
@@ -98,7 +112,6 @@ class ViewController: UIViewController {
         if let settingsVC = segue.destinationViewController as? SettingsViewController {
             settingsVC.economyController = self.economyController
         }
-        
         
         if let nc = segue.destinationViewController as? UINavigationController {
             if let spendVC = nc.childViewControllers[0] as? SpendFromFundViewController {
@@ -110,8 +123,16 @@ class ViewController: UIViewController {
                 }
                 spendVC.economyController = self.economyController
             }
+            if let saveVC = nc.childViewControllers[0] as? SaveToFundViewController {
+                if let btn = sender as? FundTableViewButton {
+                    saveVC.dstAccount = btn.dstAccount
+                }
+                saveVC.economyController = self.economyController
+            }
             
         }
+        
+        
         
     }
 

@@ -14,6 +14,7 @@ class FundTableViewCell: UITableViewCell {
     @IBOutlet weak var fundBalanceLabel: UILabel!
     @IBOutlet weak var spendButton: FundTableViewButton!
     @IBOutlet weak var saveButton: FundTableViewButton!
+    @IBOutlet weak var velocityLabel: UILabel!
     
     var updateBalanceTimer : NSTimer?;
     var economyController : EconomyController?
@@ -57,6 +58,21 @@ class FundTableViewCell: UITableViewCell {
         let balanceRounded = round(balanceAmount.sum * 100.0) / 100.0
         let text = NSString(format: currency.sumFormat, balanceRounded);
         fundBalanceLabel.text = String(text);
+        
+        var dailySum : MoneySum
+        if self.accountName != nil {
+            let acc = balance.getAccount(self.accountName!)
+            let vel = acc!.velocity
+            dailySum = vel.dsum.mul(24*60*60 / vel.dt)
+        } else {
+            var vel = balance.velocity
+            for acc in balance.accounts {
+                vel = vel.sub(acc.velocity)
+            }
+            dailySum = vel.dsum.mul(24*60*60 / vel.dt)
+        }
+        let dailySumFinal = Currencies.exchange(dailySum, to: currency.code)
+        velocityLabel.text = String(NSString(format: "%@ / d", Currencies.format(dailySumFinal)))
     }
     
     func getBalanceAmount(balance : EconomyBalance, accountName : String?) -> MoneySum

@@ -97,6 +97,21 @@ class MoneySum : NSObject, NSCoding {
     func sub(money : MoneySum) -> MoneySum {
         return MoneySum(sum: self.sum - money.sum * money.rate / self.rate, currency: self.currency, rate: self.rate)
     }
+    func mul(amount : Double) -> MoneySum {
+        return MoneySum(sum: self.sum * amount, currency: self.currency, rate: self.rate)
+    }
+    func clamp(money : MoneySum) -> MoneySum {
+        let sum = Currencies.exchange(money, to: self.currency, rate: self.rate)
+        if (self.sum > sum.sum) {
+            return MoneySum(sum: sum.sum, currency: sum.currency, rate: sum.rate)
+        } else {
+            return MoneySum(sum: self.sum, currency: self.currency, rate: self.rate)
+        }
+    }
+    func isGreaterThanEqualTo(money : MoneySum) -> Bool {
+        let sum = Currencies.exchange(money, to: self.currency, rate: self.rate)
+        return self.sum >= sum.sum
+    }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeDouble(self.sum, forKey: PropertyKey.sumKey)

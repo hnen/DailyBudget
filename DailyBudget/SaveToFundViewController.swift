@@ -12,8 +12,15 @@ class SaveToFundViewController: UIViewController {
 
     @IBOutlet weak var savingsTypeSelector: UISegmentedControl!
     @IBOutlet weak var savingsContainerView: UIView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var currentSavingsView : UIViewController?
+    
+    var economyController : EconomyController?
+    var dstAccount : String?
+    var oneTimeSaving : Double?
+    var savingVelocity : Double?
+    var savingTarget : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +38,24 @@ class SaveToFundViewController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        oneTimeSaving = nil
+        savingVelocity = nil
+        savingTarget = nil
+        if (sender === self.saveButton) {
+            if let oneTimeSavingView = self.currentSavingsView as? SaveToFundOneTimeViewController {
+                self.oneTimeSaving = Double(oneTimeSavingView.sumTextField.text!)
+            }
+            if let constantSavingView = self.currentSavingsView as? SaveToFundConstantViewController {
+                self.savingVelocity = Double(constantSavingView.savingVelocityTextField.text!)
+                if (constantSavingView.targetSumTextField.text! != "") {
+                    self.savingTarget = Double(constantSavingView.targetSumTextField.text!)
+                }
+            }
+            if let targetSavingView = self.currentSavingsView as? SaveToFundTargetDateViewController {
+                self.savingVelocity = Double(targetSavingView.velocity!)
+                self.savingTarget = Double(targetSavingView.targetSumTextField.text!)
+            }
+        }
     }
     
     
@@ -54,6 +78,10 @@ class SaveToFundViewController: UIViewController {
             id = "saveToFundTargetDate"
         }
         currentSavingsView = self.storyboard?.instantiateViewControllerWithIdentifier(id!)
+        
+        if let view = currentSavingsView as? SaveToFundConstantViewController {
+            view.setup(self.economyController!, accName: self.dstAccount!)
+        }
         
         currentSavingsView!.view.translatesAutoresizingMaskIntoConstraints = false
         //currentSavingsView!.view.alpha = 0.5

@@ -17,7 +17,7 @@ class FundTableViewCell: UITableViewCell {
     @IBOutlet weak var velocityLabel: UILabel!
     
     var updateBalanceTimer : NSTimer?;
-    var economyController : EconomyController?
+    var economyBalanceContainer : EconomyBalanceContainer?
     var accountName : String?
     
     override func awakeFromNib() {
@@ -31,7 +31,7 @@ class FundTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func initialize(economyController : EconomyController, account : String?) {
+    func initialize(economyBalanceContainer : EconomyBalanceContainer, account : String?) {
         if (account == nil) {
             fundTitleLabel.text = "General"
         } else {
@@ -42,7 +42,7 @@ class FundTableViewCell: UITableViewCell {
         spendButton.dstAccount = account
         saveButton.dstAccount = account
         
-        self.economyController = economyController
+        self.economyBalanceContainer = economyBalanceContainer;
         self.updateBalanceTimer = NSTimer.scheduledTimerWithTimeInterval(0.75, target: self, selector: "updateBalanceText", userInfo: nil, repeats: true)
         updateBalanceText();
     }
@@ -50,7 +50,7 @@ class FundTableViewCell: UITableViewCell {
     func updateBalanceText() {
         let settings = SettingsController.get()
         let currencyName = settings.getActiveCurrency()
-        let balance = self.economyController!.evaluateBalance(currencyName!)
+        let balance = self.economyBalanceContainer!.getEconomyBalance()
         let currency = Currencies.getCurrency(currencyName!)!
         
         let balanceAmount = Currencies.exchange(getBalanceAmount(balance, accountName: accountName), to: currency.code)

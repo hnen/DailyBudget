@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     
     var delegate : UITextFieldDelegate?;
     
-    var economyController : EconomyController?;
+    private var economyController : EconomyController?;
+    var economyBalanceContainer : EconomyBalanceContainer?;
     var updateBalanceTimer : NSTimer?;
     
     var settings : SettingsController?
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
         } else {
             self.economyController = EconomyController(economy: economyData!)
         }
+        self.economyBalanceContainer = EconomyBalanceContainer(economyController: self.economyController!)
 
         self.settings = SettingsController.get()
         self.updateBalanceTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateBalanceText", userInfo: nil, repeats: true)

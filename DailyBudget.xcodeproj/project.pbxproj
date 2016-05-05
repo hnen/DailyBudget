@@ -15,6 +15,7 @@
 		9D637F191C94095A00E8CBC4 /* DailyBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F181C94095A00E8CBC4 /* DailyBudgetTests.swift */; };
 		9D637F241C94095A00E8CBC4 /* DailyBudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F231C94095A00E8CBC4 /* DailyBudgetUITests.swift */; };
 		9D637F321C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */; };
+		9D9ED9611CDB2AEC00BF30E6 /* EconomyBalanceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9ED9601CDB2AEC00BF30E6 /* EconomyBalanceContainer.swift */; };
 		9DCD3BC31CC3792E0075D89F /* SaveToFundOneTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCD3BC21CC3792E0075D89F /* SaveToFundOneTimeViewController.swift */; };
 		9DCD3BC51CC3793E0075D89F /* SaveToFundConstantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCD3BC41CC3793E0075D89F /* SaveToFundConstantViewController.swift */; };
 		9DCD3BC71CC379490075D89F /* SaveToFundTargetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCD3BC61CC379490075D89F /* SaveToFundTargetDateViewController.swift */; };
@@ -73,6 +74,7 @@
 		9D637F231C94095A00E8CBC4 /* DailyBudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBudgetUITests.swift; sourceTree = "<group>"; };
 		9D637F251C94095A00E8CBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D637F311C944BD400E8CBC4 /* AddNewExpenseTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExpenseTextFieldDelegate.swift; sourceTree = "<group>"; };
+		9D9ED9601CDB2AEC00BF30E6 /* EconomyBalanceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomyBalanceContainer.swift; sourceTree = "<group>"; };
 		9DCD3BC21CC3792E0075D89F /* SaveToFundOneTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveToFundOneTimeViewController.swift; sourceTree = "<group>"; };
 		9DCD3BC41CC3793E0075D89F /* SaveToFundConstantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveToFundConstantViewController.swift; sourceTree = "<group>"; };
 		9DCD3BC61CC379490075D89F /* SaveToFundTargetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveToFundTargetDateViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				C31C4D341C9BE7AC00720E21 /* EconomyController.swift */,
 				C335C7881CA0521B00E01076 /* Currency.swift */,
 				9DD1D3631CB569FB001A6DE4 /* EconomyBalance.swift */,
+				9D9ED9601CDB2AEC00BF30E6 /* EconomyBalanceContainer.swift */,
 			);
 			name = Economy;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				9DD1D3761CB9111A001A6DE4 /* FundTableViewCell.swift in Sources */,
 				9DCD3BCB1CC382110075D89F /* SetFundSavingEvent.swift in Sources */,
 				9DD1D37C1CB91B8D001A6DE4 /* FundTableViewDelegate.swift in Sources */,
+				9D9ED9611CDB2AEC00BF30E6 /* EconomyBalanceContainer.swift in Sources */,
 				C31C4D311C9BE24800720E21 /* Account.swift in Sources */,
 				9DE05EB91CBABA6B00FBB942 /* SpendFromFundViewController.swift in Sources */,
 				C37585EB1CADAEAF002CB2CF /* SettingsViewController.swift in Sources */,

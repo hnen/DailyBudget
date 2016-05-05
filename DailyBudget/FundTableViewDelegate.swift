@@ -22,11 +22,11 @@ class FundTableViewDelegate : NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("FundTableViewCell", forIndexPath: indexPath) as! FundTableViewCell;
         let balance = mainViewController.evaluateBalance();
         let row = indexPath.row
-        cell.initialize(mainViewController.economyController!, account: nil)
+        cell.initialize(mainViewController.economyBalanceContainer!, account: nil)
         if row >= balance.accounts.count {
-            cell.initialize(mainViewController.economyController!, account: nil);
+            cell.initialize(mainViewController.economyBalanceContainer!, account: nil);
         } else {
-            cell.initialize(mainViewController.economyController!, account: balance.accounts[row].name)
+            cell.initialize(mainViewController.economyBalanceContainer!, account: balance.accounts[row].name)
         }
         return cell
     }
